@@ -1,0 +1,9 @@
+shlog/__init__.pyc
+shlog/admin.pyc
+shlog/cms_plugins.pyc
+shlog/migrations/
+shlog/models.pyc
+website/__init__.pyc
+website/settings.pyc
+website/urls.pyc
+website/wsgi.pyc
