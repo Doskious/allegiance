@@ -40,15 +40,15 @@
             var npcAllied = new Array('Rosie', 'Conchabar', 'Sandarra Quinn', 'Sandarra', 'Ambrose Kroop', 'Ambrose', 'Owlbear');
             var npcFriendly = new Array('Grokk', 'Crimson Cogward', 'Crimson', 'Kipper', 'Captain Merril Pegsworthy', 'Captain Pegsworthy', 'Merril Pegsworthy');
             var npcNeutral = new Array('Master Rickety Hake', 'Rickety Hake', 'Master Hake', 'Chandra', 'Riaris Krine', 'Krine', 'Doc Quarne', 'Quarne', 'Peppry Longfarthing', 'Peppry', 'Maheem', 'Patch Patchsalt', 'Patch');
-            var npcRivals = new Array();
+            var npcRivals = [];
             var npcUnfriendly = new Array('Fipps Chumlet', 'Fipps', 'Narwhal', 'Syl', 'Aretta', 'Jaundiced Jape', 'Jape');
             var npcHostile = new Array('Captain Barnabus Harrigan', 'Captain Harrigan', 'Harrigan', 'Mr. Plugh', 'Plugh', 'Master Scourge', 'Scourge', 'Master Lacuni', 'Lacuni');
             var npcDeceased = new Array('Mr. Plugh', 'Plugh', 'Master Scourge', 'Scourge', 'Syl', 'Aretta');
             var npcNamedCrew = new Array('Chiveeka', 'Larry', 'Curly', 'Moe', '"Barefoot" Samms Toppin', 'Barefoot Samms Toppin', 'Samms Toppin','"Badger" Medlar', 'Badger Medlar', '"Ratline" Ratsburger', 'Ratline Ratsburger', 'Ratline', 'Giffer Tibs', 'Giffer', 'Jack Scrimshaw', 'Blind Ben', "Ten'n'one", 'Fishmouth', 'Anika', 'Killjoy');
-            var npcOther = new Array();
+            var npcOther = [];
             var significantPlace = new Array('Port Peril', 'Tidewater Rock', 'Bloodcove', 'Bonewrack Island', "Rickety's Squibs", 'Firegrass Isle', 'Sangore');
             var organizations = new Array('Aspis Consortium');
-            var creepyUndead = new Array('Deathknell')
+            var creepyUndead = new Array('Deathknell');
             // Variables associating known Free Captains with their primary craft by lastname, for dynamic tooltip creation.
             var freeCaptains = new Array('Harrigan', 'Pegsworthy');
             var captOfShip = new Array('Captain of the Wormwood', 'Captain of the Bonaventure');
@@ -76,9 +76,9 @@
                 $("a:contains('"+freeCaptains[i]+"')").addClass("freeCaptain").append(tipSpan);
             }
 
-            for (var i = 0; i < npcDeceased.length; i++) {
-                var tipSpan = $('<span />', {'class': 'tooltip', text: "Currently Deceased. Reqviescat in mar\u012b pax, and soforth."});
-                $("a.NPC:contains('"+npcDeceased[i]+"')").addClass("currentlyDead").append(tipSpan);
+            for (var j = 0; j < npcDeceased.length; j++) {
+                var tipSpans = $('<span />', {'class': 'tooltip', text: "Currently Deceased. Reqviescat in mar\u012b pax, and soforth."});
+                $("a.NPC:contains('"+npcDeceased[j]+"')").addClass("currentlyDead").append(tipSpans);
             }
 
             var iID = 0;
