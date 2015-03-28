@@ -12,7 +12,7 @@
     {% if section.section_group_id == group.id %}
         <section id="section{{ section.id }}"><h1 class="ooc-data">{{ section.journal_section }}</h1>
         {% for entry in posts %}
-        {% if entry.section_id == section.id %}
+        {% if entry.section_id == section.id and entry.published_date %}
             <div class="entry">
                 <h2 class="clickableJournalTitle">
                     <span class="gameDate">{{ entry.journal_date }}</span><span class="journalContext">{{ entry.context }}</span>{% if entry.context != "" %} - {% endif %}<span class="journalTitleText">{{ entry.title }}</span><span class="journalSubTitle">{{ entry.subtext }}</span>
