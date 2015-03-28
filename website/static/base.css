@@ -8,6 +8,18 @@
          url('ankecallig-fg-webfont.svg#anke_calligraphic_fgregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'ampersandregular';
+    src: url('ampersand-webfont.eot');
+    src: url('ampersand-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ampersand-webfont.woff2') format('woff2'),
+         url('ampersand-webfont.woff') format('woff'),
+         url('ampersand-webfont.ttf') format('truetype'),
+         url('ampersand-webfont.svg#ampersandregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
@@ -16,6 +28,9 @@ body {
 }
 div.author1 {
 	font-family: 'anke_calligraphic_fgregular';
+}
+div.author3 {
+	font-family: 'ampersandregular';
 }
 .toc-holder {
 	font-family: 'anke_calligraphic_fgregular';
