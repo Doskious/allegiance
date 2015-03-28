@@ -15,7 +15,7 @@
         {% if entry.section_id == section.id and entry.published_date %}
             <div class="entry">
                 <h2 class="clickableJournalTitle">
-                    <span class="gameDate">{% render_model entry "journal_date" %}</span><span class="journalContext">{% render_model entry "context" %}</span>{% if entry.context != "" %} - {% endif %}<span class="journalTitleText">{% render_model entry "title" %}</span><span class="journalSubTitle">{% render_model entry "subtext" %}</span>
+                    <span class="gameDate">{{ entry.journal_date }}</span><span class="journalContext">{{ entry.context }}</span>{% if entry.context != "" %} - {% endif %}<span class="journalTitleText">{{ entry.title }}</span><span class="journalSubTitle">{{ entry.subtext }}</span>
                 </h2>
                 <div class="body">{{ entry.body|safe|linebreaks }}</div>
             </div>
