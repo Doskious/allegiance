@@ -12,10 +12,13 @@
 }
 
 body {
-	font-family: 'anke_calligraphic_fgregular';
 	background-image:url(parchment.jpg);
 }
+div.author1 {
+	font-family: 'anke_calligraphic_fgregular';
+}
 .toc-holder {
+	font-family: 'anke_calligraphic_fgregular';
 	position: fixed;
 }
 .toc-holder a:link, .toc-holder a:visited {
