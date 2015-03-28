@@ -42,7 +42,7 @@
             var npcNeutral = new Array('Master Rickety Hake', 'Rickety Hake', 'Master Hake', 'Chandra', 'Riaris Krine', 'Krine', 'Doc Quarne', 'Quarne', 'Peppry Longfarthing', 'Peppry', 'Maheem', 'Patch Patchsalt', 'Patch');
             var npcRivals = new Array();
             var npcUnfriendly = new Array('Fipps Chumlet', 'Fipps', 'Narwhal', 'Syl', 'Aretta', 'Jaundiced Jape', 'Jape');
-            var npcHostile = new Array('Captain Barnabus Harrigan', 'Captain Harrigan', 'Harrigan', 'Mr. Plugh', 'Plugh', 'Master Scourge', 'Scourge');
+            var npcHostile = new Array('Captain Barnabus Harrigan', 'Captain Harrigan', 'Harrigan', 'Mr. Plugh', 'Plugh', 'Master Scourge', 'Scourge', 'Master Lacuni', 'Lacuni');
             var npcDeceased = new Array('Mr. Plugh', 'Plugh', 'Master Scourge', 'Scourge', 'Syl', 'Aretta');
             var npcNamedCrew = new Array('Chiveeka', 'Larry', 'Curly', 'Moe', '"Barefoot" Samms Toppin', 'Barefoot Samms Toppin', 'Samms Toppin','"Badger" Medlar', 'Badger Medlar', '"Ratline" Ratsburger', 'Ratline Ratsburger', 'Ratline', 'Giffer Tibs', 'Giffer', 'Jack Scrimshaw', 'Blind Ben', "Ten'n'one", 'Fishmouth', 'Anika', 'Killjoy');
             var npcOther = new Array();
@@ -99,20 +99,28 @@
                 'id': 'toc-index'
             }).appendTo('#toc-holder');
 
-            $("section").each(function() {
-                var sectext = $(this).children('h1').text();
-                var secid = this.id;
-                var seca = $('<a />',{'href':'#'+secid,'text':sectext});
-                var secul = $('<ul />',{'class':'toc-sub toc-closed','id':'to'+secid});
-                var secli = $('<li />',{'class':'toc-h1'}).append(seca).append(secul);
-                secli.appendTo('#toc-index');
-                $(this).children("div.entry").children("h2.clickableJournalTitle").each(function() {
-                    var toctext = $(this).children('.journalTitleText').text();
-                    var tocid = this.id;
-                    var toca = $('<a />',{'href':'#'+tocid,'text':toctext});
-                    var tocli = $('<li />',{'class':'toc-entry'}).append(toca);
-                    // console.log(this.parentNode.id);
-                    tocli.appendTo('#to'+this.parentNode.parentNode.id);
+            $("div.sectionGrouping").each(function(){
+                var grptext = $(this).children('span').text();
+                var grpid = this.id;
+                var grpa = $('<a />',{'href':'#'+grpid,'text':grptext});
+                var grpul = $('<ul />',{'class':'toc-sub toc-closed','id':'to'+grpid});
+                var grpli = $('<li />',{'class':'toc-h1'}).append(grpa).append(grpul);
+                grpli.appendTo('#toc-index');
+                $(this).children("section").each(function() {
+                    var sectext = $(this).children('h1').text();
+                    var secid = this.id;
+                    var seca = $('<a />',{'href':'#'+secid,'text':sectext});
+                    var secul = $('<ul />',{'class':'toc-sub toc-closed','id':'to'+secid});
+                    var secli = $('<li />',{'class':'toc-h1'}).append(seca).append(secul);
+                    secli.appendTo('#to'+this.parentNode.id);
+                    $(this).children("div.entry").children("h2.clickableJournalTitle").each(function() {
+                        var toctext = $(this).children('.journalTitleText').text();
+                        var tocid = this.id;
+                        var toca = $('<a />',{'href':'#'+tocid,'text':toctext});
+                        var tocli = $('<li />',{'class':'toc-entry'}).append(toca);
+                        // console.log(this.parentNode.id);
+                        tocli.appendTo('#to'+this.parentNode.parentNode.id);
+                    });
                 });
             });
 
@@ -134,7 +142,7 @@
                 $("h2").removeClass('expanded');
                 $('#'+entryID).siblings(".body").show('fast');
                 $('#'+entryID).addClass('expanded');
-            })
+            });
 
             $("h2.clickableJournalTitle").on("click", function() {
                 if ($(this).hasClass("expanded")) {

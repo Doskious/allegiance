@@ -10,8 +10,16 @@ class Hello(CMSPlugin):
         return u'{0}'.format(self.guest_name)
 
 
+class SectionGroup(models.Model):
+    group_name = models.CharField(max_length=128)
+
+    def __unicode__(self):
+        return u'{0}'.format(self.group_name)
+
+
 class JournalSection(models.Model):
     journal_section = models.CharField(max_length=128)
+    section_group = models.ForeignKey('SectionGroup')
 
     def __unicode__(self):
         return u'{0}'.format(self.journal_section)
