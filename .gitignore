@@ -7,3 +7,9 @@ website/__init__.pyc
 website/settings.pyc
 website/urls.pyc
 website/wsgi.pyc
+allegiance.sublime-project
+allegiance.sublime-workspace
+shlog/cms_app.pyc
+shlog/urls.pyc
+shlog/views.pyc
+static/

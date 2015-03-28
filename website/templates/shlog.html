@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Adventure Log{% endblock title %}
+
+{% block content %}
+<div id="toc-holder" class="toc-holder"></div>
+<div class="aframe">
+<div class="journal">
+    {% for section in sections %}
+        <section id="section{{ section.id }}"><h1 class="ooc-data">{{ section.journal_section }}</h1>
+        {% for entry in posts %}
+        {% if entry.section_id == section.id %}
+            <div class="entry">
+                <h2 class="clickableJournalTitle">
+                    <span class="gameDate">{{ entry.journal_date }}</span><span class="journalContext">{{ entry.context }}</span>{% if entry.context != "" %} - {% endif %}<span class="journalTitleText">{{ entry.title }}</span><span class="journalSubTitle">{{ entry.subtext }}</span>
+                </h2>
+                <div class="body">{{ entry.body|safe|linebreaks }}</div>
+            </div>
+        {% endif %}
+        {% endfor %}
+        </section>
+    {% endfor %}
+</div>
+</div>
+{% endblock content %}

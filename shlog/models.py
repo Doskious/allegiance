@@ -4,18 +4,25 @@ from cms.models.pluginmodel import CMSPlugin
 
 
 class Hello(CMSPlugin):
-    guest_name = models.CharField(max_length=50, default='Guest')
+    guest_name = models.CharField(max_length=50, default='Stranger')
 
     def __unicode__(self):
         return u'{0}'.format(self.guest_name)
 
 
+class JournalSection(models.Model):
+    journal_section = models.CharField(max_length=128)
+
+    def __unicode__(self):
+        return u'{0}'.format(self.journal_section)
+
+
 class JournalEntry(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=60)
-    subtext = models.CharField(max_length=42)
-    context = models.CharField(max_length=128)
-    section = models.CharField(max_length=128)
+    subtext = models.CharField(max_length=42, default="", blank=True)
+    context = models.CharField(max_length=128, default="Ship's Log: The Allegiance", blank=True)
+    section = models.ForeignKey('JournalSection')
     journal_date = models.CharField(max_length=10)
     body = models.TextField()
     created_date = models.DateTimeField(
@@ -28,5 +35,5 @@ class JournalEntry(models.Model):
         self.save()
 
     def __unicode__(self):
-        return u'{0}'.format(self.name)
+        return u'{0}'.format(self.title)
 
