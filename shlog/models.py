@@ -31,7 +31,7 @@ class JournalEntry(models.Model):
     subtext = models.CharField(max_length=42, default="", blank=True)
     context = models.CharField(max_length=128, default="Ship's Log: The Allegiance", blank=True)
     section = models.ForeignKey('JournalSection')
-    journal_date = models.CharField(max_length=10)
+    journal_date = models.CharField(max_length=10, default="4714/MM/DD")
     body = models.TextField()
     created_date = models.DateTimeField(
             default=timezone.now)
