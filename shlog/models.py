@@ -11,7 +11,7 @@ class Hello(CMSPlugin):
 
 
 class CharacterStatus(models.Model):
-    status = models.CharField(max_length=16)
+    status = models.CharField(max_length=16, default='NPC')
 
     def __unicode__(self):
         return u'{0}'.format(self.status)
@@ -41,7 +41,7 @@ class JournalSection(models.Model):
 
 
 class JournalEntry(models.Model):
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey('JournalAuthor')
     title = models.CharField(max_length=60)
     subtext = models.CharField(max_length=42, default="", blank=True)
     context = models.CharField(max_length=128, default="Ship's Log: The Allegiance", blank=True)
