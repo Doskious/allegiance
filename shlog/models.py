@@ -13,6 +13,9 @@ class Hello(CMSPlugin):
 class CharacterStatus(models.Model):
     status = models.CharField(max_length=16)
 
+    class Meta:
+            verbose_name_plural = "character statuses"
+
     def __unicode__(self):
         return u'{0}'.format(self.status)
 
@@ -52,6 +55,9 @@ class JournalEntry(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
+
+    class Meta:
+            verbose_name_plural = "journal entries"
 
     def publish(self):
         self.published_date = timezone.now()
