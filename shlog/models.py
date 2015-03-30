@@ -10,6 +10,21 @@ class Hello(CMSPlugin):
         return u'{0}'.format(self.guest_name)
 
 
+class CharacterStatus(models.Model):
+    status = models.CharField(max_length=16)
+
+    def __unicode__(self):
+        return u'{0}'.format(self.status)
+
+
+class JournalAuthor(models.Model):
+    name = models.CharField(max_length=128)
+    kind = models.ForeignKey('CharacterStatus')
+
+    def __unicode__(self):
+        return u'{0}'.format(self.name)
+
+
 class SectionGroup(models.Model):
     group_name = models.CharField(max_length=128)
 
