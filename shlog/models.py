@@ -11,7 +11,7 @@ class Hello(CMSPlugin):
 
 
 class CharacterStatus(models.Model):
-    status = models.CharField(max_length=16, default='NPC')
+    status = models.CharField(max_length=16)
 
     def __unicode__(self):
         return u'{0}'.format(self.status)
@@ -19,7 +19,7 @@ class CharacterStatus(models.Model):
 
 class JournalAuthor(models.Model):
     name = models.CharField(max_length=128)
-    kind = models.ForeignKey('CharacterStatus')
+    kind = models.ForeignKey('CharacterStatus', default=2)
 
     def __unicode__(self):
         return u'{0}'.format(self.name)
