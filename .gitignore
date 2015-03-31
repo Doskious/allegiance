@@ -16,3 +16,4 @@ shlog/views.pyc
 static/
 public/
 passenger_wsgi.pyc
+tmp/

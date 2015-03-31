@@ -14,6 +14,7 @@
             padding-right: 20px;
         }
     </style>
+    <link href='https://fonts.googleapis.com/css?family=Marck+Script|Allura|Reenie+Beanie|Schoolbell|Calligraffitti|Kaushan+Script' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static "base.css" %}" type="text/css" charset="utf-8">
     <link rel="stylesheet" media="screen" href="{% static "superfish.css" %}">
     <link rel="stylesheet" media="screen" href="{% static "superfish-vertical.css" %}">
@@ -37,16 +38,16 @@
         $(document).ready(function(){
             // Variables defining text strings for dynamic highlighting.
             var pcNames = new Array('Captain Varnai Tideweaver', 'Varnai Tideweaver', 'Captain Tideweaver', 'Cap\'n Varnai', 'Varnai', 'Ner\u00FF\u00E7e Tr\u00EDtonsd\u00F4tt\u00ECr', 'Ner\u00FF\u00E7e', 'Neryce', 'Mad Harry Bonny', 'Mad Harry', 'Harry', 'Aisla', 'Buster', 'Emalliandra');
-            var npcAllied = new Array('Rosie', 'Conchabar', 'Sandarra Quinn', 'Sandarra', 'Ambrose Kroop', 'Ambrose', 'Owlbear');
-            var npcFriendly = new Array('Grokk', 'Crimson Cogward', 'Crimson', 'Kipper', 'Captain Merril Pegsworthy', 'Captain Pegsworthy', 'Merril Pegsworthy');
+            var npcAllied = new Array('Rosie', 'Conchabar', 'Sandarra Quinn', 'Sandarra', 'Ambrose Kroop', 'Ambrose', 'Owlbear', 'OWLBER', 'Opal', 'Reef');
+            var npcFriendly = new Array('Grokk', 'Crimson Cogward', 'Crimson', 'Kipper', 'Captain Merril Pegsworthy', 'Captain Pegsworthy', 'Merril Pegsworthy', 'Doran', 'Tanos Prideweather', 'Tanos');
             var npcNeutral = new Array('Master Rickety Hake', 'Rickety Hake', 'Master Hake', 'Chandra', 'Riaris Krine', 'Krine', 'Doc Quarne', 'Quarne', 'Peppry Longfarthing', 'Peppry', 'Maheem', 'Patch Patchsalt', 'Patch');
             var npcRivals = [];
             var npcUnfriendly = new Array('Fipps Chumlet', 'Fipps', 'Narwhal', 'Syl', 'Aretta', 'Jaundiced Jape', 'Jape');
             var npcHostile = new Array('Captain Barnabus Harrigan', 'Captain Harrigan', 'Harrigan', 'Mr. Plugh', 'Plugh', 'Master Scourge', 'Scourge', 'Master Lacuni', 'Lacuni');
             var npcDeceased = new Array('Mr. Plugh', 'Plugh', 'Master Scourge', 'Scourge', 'Syl', 'Aretta');
-            var npcNamedCrew = new Array('Chiveeka', 'Larry', 'Curly', 'Moe', '"Barefoot" Samms Toppin', 'Barefoot Samms Toppin', 'Samms Toppin','"Badger" Medlar', 'Badger Medlar', '"Ratline" Ratsburger', 'Ratline Ratsburger', 'Ratline', 'Giffer Tibs', 'Giffer', 'Jack Scrimshaw', 'Blind Ben', "Ten'n'one", 'Fishmouth', 'Anika', 'Killjoy');
+            var npcNamedCrew = new Array('Chiveeka', 'Larry', 'Curly', 'Moe', '"Barefoot" Samms Toppin', 'Barefoot Samms Toppin', 'Samms Toppin','"Badger" Medlar', 'Badger Medlar', '"Ratline" Ratsburger', 'Ratline Ratsburger', 'Ratline', 'Giffer Tibs', 'Giffer', 'Jack Scrimshaw', 'Blind Ben', "Ten'n'one", '10-1', 'Fishmouth', 'Anika', 'Killjoy');
             var npcOther = [];
-            var significantPlace = new Array('Port Peril', 'Tidewater Rock', 'Bloodcove', 'Bonewrack Island', "Rickety's Squibs", 'Firegrass Isle', 'Sangore');
+            var significantPlace = new Array('Port Peril', 'Tidewater Rock', 'Bloodcove', 'Bonewrack Island', "Rickety's Squibs", 'Firegrass Isle', 'Sangore', 'Quent', 'Y\'kenqu', 'Dahak\'s Fang', 'Windward Isle');
             var organizations = new Array('Aspis Consortium');
             var creepyUndead = new Array('Deathknell');
             // Variables associating known Free Captains with their primary craft by lastname, for dynamic tooltip creation.
