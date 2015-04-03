@@ -140,7 +140,8 @@ INSTALLED_APPS = (
     'south',
     'reversion',
     'website',
-    'shlog'
+    'shlog',
+    'charsheet'
 )
 
 LANGUAGES = (
@@ -170,7 +171,9 @@ CMS_TEMPLATES = (
     ## Customize this
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
+    ('sidebar_right.html', 'Sidebar Right'),
+    ('charsheet.html', 'Character Sheet'),
+    ('main.html', 'Frontpage Shlog Display')
 )
 
 CMS_PERMISSION = True

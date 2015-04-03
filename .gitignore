@@ -17,3 +17,6 @@ static/
 public/
 passenger_wsgi.pyc
 tmp/
+charsheet/__init__.pyc
+charsheet/migrations/
+charsheet/models.pyc
