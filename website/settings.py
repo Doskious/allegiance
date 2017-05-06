@@ -23,11 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '8#j*o#awh^2)p*v7!ap*=s91^_lycj8x&!jl*6ndajm-)s3)7&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True 
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['allegiance.bastion-rising.net']
+ALLOWED_HOSTS = ['allegiance.bastion-rising.net', 'allegiance.bastion-rising.local', 'eva.local']
 
 
 # Application definition
@@ -63,7 +63,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/'
+STATIC_URL = '/s/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'public')
@@ -73,11 +73,11 @@ STATICFILES_DIRS = (
 )
 SITE_ID = 1
 
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-    'django.template.loaders.eggs.Loader'
-)
+#TEMPLATE_LOADERS = (
+#    'django.template.loaders.filesystem.Loader',
+#    'django.template.loaders.app_directories.Loader',
+#    'django.template.loaders.eggs.Loader'
+#)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -85,7 +85,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'django.middleware.doc.XViewMiddleware',
+    'django.contrib.admindocs.middleware.XViewMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
@@ -94,23 +94,53 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.language.LanguageCookieMiddleware'
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.contrib.messages.context_processors.messages',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.request',
-    'django.core.context_processors.media',
-    'django.core.context_processors.csrf',
-    'django.core.context_processors.tz',
-    'sekizai.context_processors.sekizai',
-    'django.core.context_processors.static',
-    'cms.context_processors.cms_settings'
-)
+TEMPLATES = [
+{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'APP_DIRS': True,
+    'OPTIONS': {
+        'context_processors':
+            [
+            'django.contrib.auth.context_processors.auth',
+            'django.template.context_processors.debug',
+            'django.template.context_processors.i18n',
+            'django.template.context_processors.media',
+            'django.template.context_processors.static',
+            'django.template.context_processors.tz',
+            'django.template.context_processors.csrf',
+            'django.template.context_processors.request',
+            'django.contrib.messages.context_processors.messages',
+            'sekizai.context_processors.sekizai',
+            'django.core.context_processors.static',
+            'cms.context_processors.cms_settings',
+            ],
+#        'loaders':
+#            [
+#            'django.template.loaders.filesystem.Loader',
+#            'django.template.loaders.app_directories.Loader',
+#            'django.template.loaders.eggs.Loader'
+#            ]
+    }
+},
+]
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'website', 'templates'),
-)
+#TEMPLATE_CONTEXT_PROCESSORS = (
+#    'django.contrib.auth.context_processors.auth',
+#    'django.contrib.messages.context_processors.messages',
+#    'django.template.context_processors.i18n',
+#    'django.template.context_processors.debug',
+#    'django.template.context_processors.request',
+#    'django.template.context_processors.media',
+#    'django.template.context_processors.csrf',
+#    'django.template.context_processors.tz',
+#    'sekizai.context_processors.sekizai',
+#    'django.core.context_processors.static',
+#    'cms.context_processors.cms_settings'
+#)
+
+#TEMPLATE_DIRS = (
+#    os.path.join(BASE_DIR, 'website', 'templates'),
+#)
 
 INSTALLED_APPS = (
     'djangocms_admin_style',
@@ -126,22 +156,23 @@ INSTALLED_APPS = (
     'cms',
     'menus',
     'sekizai',
-    'mptt',
+    'treebeard',
     'djangocms_style',
     'djangocms_column',
-    'djangocms_file',
-    'djangocms_flash',
+#    'djangocms_file',
+#    'djangocms_flash',
     'djangocms_googlemap',
     'djangocms_inherit',
     'djangocms_link',
     'djangocms_picture',
     'djangocms_teaser',
     'djangocms_video',
-    'south',
-    'reversion',
+#    'reversion',
     'website',
     'shlog',
-    'charsheet'
+#    'charsheet',
+    'krynncal',
+    'ehtest',
 )
 
 LANGUAGES = (
