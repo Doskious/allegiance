@@ -23,7 +23,7 @@
         <input type="submit" name="date" id="getnewdate" value="{{prev_date}}" />
     </form>
     <form id="date_input" action="/dragonlance/moon-magic/" method="GET">
-        <label>New Date: <input id="newdate" name="date" type="text" value="{{request.GET.date}}" placeholder="yyy-mm-dd" /></label>
+        <label>New Date: <input id="newdate" name="date" type="text" value="{{view_date}}" placeholder="yyy-mm-dd hh:mm:ss" /></label>
         <input type="submit" id="getnewdate" value="Change Date" />
     </form>
     <form id="next_date_input" action="/dragonlance/moon-magic/" method="GET">

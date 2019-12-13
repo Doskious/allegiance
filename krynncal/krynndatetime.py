@@ -524,6 +524,9 @@ class timedelta(object):
     seconds = property(lambda self: self.__seconds, doc="seconds")
     microseconds = property(lambda self: self.__microseconds,
                             doc="microseconds")
+    
+    def total_seconds(self):
+        return self.seconds + (self.days * 24 * 3600)
 
     def __add__(self, other):
         if isinstance(other, timedelta):

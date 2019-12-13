@@ -10,6 +10,13 @@ class Hello(CMSPlugin):
         return u'{0}'.format(self.guest_name)
 
 
+class AssociatedCampaign(models.Model):
+    name = models.CharField(max_length=250)
+
+    def __unicode__(self):
+        return u'{0}'.format(self.name)
+
+
 class CharacterStatus(models.Model):
     status = models.CharField(max_length=16)
 
@@ -30,6 +37,7 @@ class JournalAuthor(models.Model):
 
 class SectionGroup(models.Model):
     group_name = models.CharField(max_length=128)
+    for_campaign = models.ForeignKey('AssociatedCampaign', default=1)
 
     def __unicode__(self):
         return u'{0}'.format(self.group_name)

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '8#j*o#awh^2)p*v7!ap*=s91^_lycj8x&!jl*6ndajm-)s3)7&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -167,12 +167,14 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_teaser',
     'djangocms_video',
+    'stdimage',
 #    'reversion',
     'website',
     'shlog',
 #    'charsheet',
     'krynncal',
     'ehtest',
+    'kthrone',
 )
 
 LANGUAGES = (
