@@ -43,7 +43,7 @@ Pillow==2.9.0
 progressbar2==3.34.3
 python-utils==2.2.0
 pytz==2015.2
-requests==2.6.0
+requests==2.20.0
 six==1.10.0
 static3==0.5.1
 Unidecode==0.4.17
