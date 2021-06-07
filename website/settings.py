@@ -175,6 +175,7 @@ INSTALLED_APPS = (
     'krynncal',
     'ehtest',
     'kthrone',
+    'pathpor',
 )
 
 LANGUAGES = (
@@ -206,7 +207,8 @@ CMS_TEMPLATES = (
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
     ('charsheet.html', 'Character Sheet'),
-    ('main.html', 'Frontpage Shlog Display')
+    ('main.html', 'Frontpage Shlog Display'),
+    ('por_list.html', 'Portfolio Listing')
 )
 
 CMS_PERMISSION = True

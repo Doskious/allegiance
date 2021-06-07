@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% load cms_tags sekizai_tags staticfiles %}
+
+{% block title %}Portfolio Renders{% endblock title %}
+
+{% block content %}
+<ul>
+    {% for por in available_pors %}
+    <li><a href="{% url 'view_por' por %}">{{ por }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}
